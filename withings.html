@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Retour Withings</title>
+</head>
+<body style="font:16px/1.5 -apple-system,system-ui,sans-serif;max-width:32rem;margin:15vh auto;padding:0 16px">
+<p id="m">Retour vers le serveur de la maison…</p>
+<script>
+// Page relais (C46) : Withings exige une adresse de retour publique ; celle-ci renvoie aussitôt, avec le code
+// d'autorisation, vers la page santé du serveur (joignable seulement à la maison ou par le VPN).
+// Remplacer DOMAINE par votre domaine (par exemple maison.example.fr).
+const CIBLE = "https://sante.DOMAINE/withings/retour";
+if (location.search.includes("code=") || location.search.includes("error=")) {
+  location.replace(CIBLE + location.search);
+} else {
+  document.getElementById("m").textContent = "Page relais pour l'autorisation Withings du serveur de la maison.";
+}
+</script>
+</body>
+</html>
