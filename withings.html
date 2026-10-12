@@ -13,7 +13,7 @@
 // Page relais (C46) : Withings exige une adresse de retour publique ; celle-ci renvoie aussitôt, avec le code
 // d'autorisation, vers la page santé du serveur (joignable seulement à la maison ou par le VPN).
 // Remplacer DOMAINE par votre domaine (par exemple maison.example.fr).
-const CIBLE = "https://sante.DOMAINE/withings/retour";
+const CIBLE = "https://sante.maison.jycampion.fr/withings/retour";
 if (location.search.includes("code=") || location.search.includes("error=")) {
   location.replace(CIBLE + location.search);
 } else {
